@@ -16,13 +16,23 @@ public class Person {
     private Long id;
 
     private String name;
+
+    @Column(name = "lastname")
     private String lastName;
+    private String email;
 
     @Column(name="programming_language")
     private String programminglanguage;
 
     public Person() {
     }
+    public Person(String name, String lastName, String email, String programminglanguage) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.programminglanguage = programminglanguage;
+    }
+
     public Long getId() {
         return id;
     }
@@ -47,10 +57,16 @@ public class Person {
     public void setProgramminglanguage(String programminglanguage) {
         this.programminglanguage = programminglanguage;
     }
-    
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
-        return "Person [id=" + id + ", name=" + name + ", lastName=" + lastName + ", programminglanguage="
-                + programminglanguage + "]";
+        return "Person [id=" + id + "\nname=" + name + "\nlastName=" + lastName + "\nemail=" + email + "\nprogramminglanguage="
+                + programminglanguage + "]\n";
     }
 }
